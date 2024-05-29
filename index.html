@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Vender Carro</title>
+</head>
+<body>
+    <header>
+        <p id="intial-phrase"><strong>Cadastre seu veículo para vender mais rápido!</strong></p>
+    </header>
+    <main>
+        <div id="title-form">
+            <p>Formulário</p>
+        </div>
+        <hr>
+        <h1>Venda fácil seu carro!</h1>
+        <p id="introduction">Descreva as características do veículo a seguir e marque os opcionais que ele possui.</p>
+
+        <form action="https://api.sheetmonkey.io/form/aHn5HzwMtihQmdRNg5W4Dv" method="post"><!--Sheet Monkey conecta formulários ao Google Sheets.-->
+            <label for="title">Título do anúncio:</label>
+            <input type="text" name="title" id="title" placeholder="Um título para anunciar seu carro" minlength="1" maxlength="50" required>
+            <label for="description">Descrição:</label>
+            <textarea name="description" id="description" placeholder="Aqui você coloca os detalhes do veículo, por exemplo, se ele tem algum arranhão" required></textarea>
+            <label for="brand">Marca:</label>
+            <input type="text" name="brand" id="brand" placeholder="Digite a marca do veículo" minlength="1" maxlength="30" list="brand-options" required>
+
+            <datalist id="brand-options">
+                <option value="Audi"></option>
+                <option value="BMW"></option>
+                <option value="Chevrolet"></option>
+                <option value="Fiat"></option>
+                <option value="Ford"></option>
+                <option value="Honda"></option>
+                <option value="Jeep"></option>
+                <option value="Nissan"></option>
+                <option value="WolksWagen"></option>
+            </datalist>
+
+            <label for="model">Modelo:</label>
+            <input type="text" name="model" id="model" placeholder="Digite o modelo do veículo" minlength="1" maxlength="30" required>
+            <label for="mileage">Kilometragem:</label>
+            <input type="number" name="mileage" id="mileage" placeholder="Digite a kilometragem do veículo" minlength="1" maxlength="30" required>
+            <label for="date">Data da compra:</label>
+            <input type="date" name="date" id="date">
+            <label for="cambio">Tipo de câmbio:</label>
+        
+            <div class="radio">
+                <input type="radio" value="manual" name="car-gearbox" id="car-gearbox">
+                <label for="car-gearbox">Manual</label>
+                <input type="radio" value="automatico" name="car-gearbox" id="car-gearbox">
+                <label for="car-gearbox">Automático</label>
+            </div>
+
+            <label for="optional">Opcionais</label>
+            <div class="checkbox">
+                <input type="checkbox" name="optional" id="optional">
+                <label for="optional">Airbag</label>
+                <br>
+                <input type="checkbox" name="optional" id="optional">
+                <label for="optional">Alarme</label>
+                <br>
+                <input type="checkbox" name="optional" id="optional">
+                <label for="optional">Ar Condicionado</label>
+                <br>
+                <input type="checkbox" name="optional" id="optional">
+                <label for="optional">Câmera de Ré</label>
+                <br>
+            </div>
+
+            <label for="image-car">Foto do carro:</label>
+            <input type="file" name="image-car" id="image-car">
+            <input type="submit" value="Cadastrar" id="register">
+        </form>
+
+    </main>
+    
+</body>
+</html>
